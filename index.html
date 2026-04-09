@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Gold Prices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        h1 {
+            color: #FFD700;
+        }
+        .price {
+            font-size: 50px;
+            margin: 30px 0;
+            color: #333;
+        }
+        .update-time {
+            color: #666;
+            font-size: 14px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background: #FFD700;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #e6c200;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Live Gold Price</h1>
+<div class="price" id="gold-price">$0.00</div>
+<div class="update-time" id="update-time">Last updated: --</div>
+<button onclick="updatePrice()">Refresh Price</button>
+
+<script>
+// Function to simulate live gold price
+function updatePrice() {
+    // Random gold price for demo (replace with real API if needed)
+    const price = (1800 + Math.random() * 50).toFixed(2);
+    document.getElementById('gold-price').innerText = '$' + price;
+    document.getElementById('update-time').innerText = 'Last updated: ' + new Date().toLocaleTimeString();
+}
+
+// Auto-update every 10 seconds
+setInterval(updatePrice, 10000);
+
+// Initial price load
+updatePrice();
+</script>
+
+</body>
+</html>
